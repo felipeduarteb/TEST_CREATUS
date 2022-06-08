@@ -2,20 +2,18 @@ import React from 'react';
 
 import { Container, ContainerImage, Image, DescriptionContainer, Title, Description, PriceContainer, Span } from './styled';
 
-function Product() {
+function Product({poster, name, description, oldPrice, price}) {
     return (
         <Container>
             <ContainerImage>
-                <Image />
+                <Image src={poster} />
             </ContainerImage>
             <DescriptionContainer>
-                <Title>Nome do produto</Title>
-                <Description>
-                    Morbi eu condimentum urna. Curabitur eu magna eget turpis condimentum ultrices.
-                </Description>
+                <Title>{name}</Title>
+                <Description>{description}</Description>
                 <PriceContainer>
-                    De: R$ 99,90
-                    <Span>Por: R$ 19,30</Span>
+                    De: R$ {oldPrice}
+                    <Span>Por: R$ {price}</Span>
                     ou 2x de R$ 9,90
                 </PriceContainer>
 

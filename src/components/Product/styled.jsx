@@ -14,7 +14,8 @@ export const ContainerImage = styled.figure`
 
 `;
 export const Image = styled.img`
-
+    width: 100%;
+    height: 100%;
 `;
 export const DescriptionContainer = styled.article`
     display: flex;

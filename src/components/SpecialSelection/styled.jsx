@@ -23,6 +23,8 @@ export const Line = styled.span`
 export const ProductContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     gap: 1vw;
 `;
 export const ButtonMoreProducts = styled.button`

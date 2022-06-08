@@ -3,8 +3,6 @@ import styled from 'styled-components';
 export const Container = styled.header`
     height: 23vw;
     background: #707070;
-    background-repeat:no-repeat;
-    overflow: visible;
     display: flex;
     flex-direction: column;
     align-items: center;

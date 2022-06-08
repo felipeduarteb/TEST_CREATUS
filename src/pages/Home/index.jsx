@@ -1,5 +1,5 @@
-import React from 'react';
 import Contact from '../../components/Contact';
+import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import ShareNews from '../../components/ShareNews';
 import SpecialSelection from '../../components/SpecialSelection';
@@ -7,6 +7,7 @@ import SpecialSelection from '../../components/SpecialSelection';
 import { Container } from './styled';
 
 function Home() {
+  
   return (
     <>
       <Header />
@@ -15,6 +16,7 @@ function Home() {
         <SpecialSelection />
         <ShareNews />
       </Container>
+      <Footer />
     </>
   );
 }
