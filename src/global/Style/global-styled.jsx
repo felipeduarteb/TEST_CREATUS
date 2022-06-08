@@ -55,6 +55,9 @@ body {
 	width: 100%;
 	height: 100%;
 	font-size: 1vw;
+	@media (max-width: 767px){
+		font-size: 3vw;
+    }
 }
 `;
 

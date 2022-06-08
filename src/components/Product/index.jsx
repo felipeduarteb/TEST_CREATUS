@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Container, ContainerImage, Image, DescriptionContainer, Title, Description, PriceContainer, Span } from './styled';
+import { Container, ContainerImage, Image, DescriptionContainer, Title, Description, PriceContainer, Span, ButtonStyle } from './styled';
 
-function Product({poster, name, description, oldPrice, price}) {
+function Product({poster, name, description, oldPrice, price, parcel}) {
     return (
         <Container>
             <ContainerImage>
@@ -14,10 +14,10 @@ function Product({poster, name, description, oldPrice, price}) {
                 <PriceContainer>
                     De: R$ {oldPrice}
                     <Span>Por: R$ {price}</Span>
-                    ou 2x de R$ 9,90
+                    ou {parcel}x de R$ {price / parcel}
                 </PriceContainer>
-
             </DescriptionContainer>
+            <ButtonStyle>Comprar</ButtonStyle>
         </Container>
     );
 }

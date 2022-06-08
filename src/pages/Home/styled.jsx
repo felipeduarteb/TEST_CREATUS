@@ -10,4 +10,7 @@ export const Container = styled.main`
   *{
     color: #888888;
   }
+  @media (max-width: 767px){
+        width: 100vw;
+  }
 `;

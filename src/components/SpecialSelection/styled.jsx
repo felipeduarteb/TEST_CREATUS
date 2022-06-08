@@ -24,11 +24,14 @@ export const ProductContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
-    gap: 1vw;
+    justify-content: space-between;
+    gap: 3vw;
 `;
 export const ButtonMoreProducts = styled.button`
+    margin: 0 auto;
     width: 30vw;
     height: 3vw;
-    margin: 0 auto;
+    border: solid 1px #707070;
+    border-radius: 4px;
+    cursor: pointer;
 `;

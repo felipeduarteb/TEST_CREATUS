@@ -6,12 +6,15 @@ export const Container = styled.div`
     gap: 1vw;
     width: 13vw;
     height: 100%;
+    
 `;
 export const ContainerImage = styled.figure`
     width: 13vw;
-    height: 13vw;
+    height: 12vw;
     border: 1px solid #707070;
-
+    border-radius: 1px;
+    overflow: hidden;
+    cursor: pointer;
 `;
 export const Image = styled.img`
     width: 100%;
@@ -36,4 +39,12 @@ export const PriceContainer = styled.p`
 export const Span = styled.span`
     font-size: 1.5vw;
     font-weight: bold;
+`;
+export const ButtonStyle = styled.button`
+    width: 100%;
+    height: 2.5vw;
+    border: solid 1px #707070;
+    border-radius: 4px;
+    cursor: pointer;
+    
 `;

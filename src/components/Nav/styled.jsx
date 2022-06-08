@@ -6,6 +6,11 @@ export const Container = styled.nav`
 export const List = styled.ul`
     display: flex;
     gap: 1.5vw;
+    @media (max-width: 767px){
+        gap: 4.5vw;
+        /* flex-wrap: wrap; */
+        /* flex-direction: column; */
+    }
 `;
 export const ItemList = styled.li`
     cursor: pointer;
@@ -13,6 +18,10 @@ export const ItemList = styled.li`
     width: 13vw;
     height: 2.5vw;
     background: #FFFFFF;
+    @media (max-width: 767px){
+        width: 30vw;
+        height: 6vw;
+    }
 `;
 export const Link = styled.a`
     width: 100%;
