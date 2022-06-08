@@ -17,7 +17,7 @@ export const Apresentation = styled.aside`
     flex-direction: column;
     gap: 1.5vw;
 `;
-export const Title = styled.h1`
+export const Title = styled.h2`
     font-size: 1.5vw;
 `;
 export const Text = styled.p`
