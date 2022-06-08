@@ -18,6 +18,11 @@ export const InputStyle = styled.input`
     border: 1px solid #707070;
     border-radius: 4px;
     height: 2.5vw;
+    &[type="number"]::-webkit-outer-spin-button,
+    &[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
     @media (max-width: 767px){
         height: 6vw;
     }

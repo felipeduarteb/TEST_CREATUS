@@ -2,14 +2,19 @@ import styled from 'styled-components';
 
 export const Container = styled.nav`
     width: min-content;
+    @media (max-width: 767px){
+        width: 70vw;
+    }
 `;
 export const List = styled.ul`
     display: flex;
     gap: 1.5vw;
+    align-items: center;
+    justify-content: center;
     @media (max-width: 767px){
         gap: 4.5vw;
-        /* flex-wrap: wrap; */
-        /* flex-direction: column; */
+        flex-wrap: wrap;
+        
     }
 `;
 export const ItemList = styled.li`
