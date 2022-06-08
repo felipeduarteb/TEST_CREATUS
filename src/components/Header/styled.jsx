@@ -2,15 +2,27 @@ import styled from 'styled-components';
 
 export const Container = styled.header`
     height: 23vw;
-    background: #707070;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 4vw;
     text-align: center;
-    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 65%);
+    
     @media (max-width: 767px){
         height: 60vw;
+    }
+`;
+export const Background = styled.div`
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 23vw;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 65%);
+    background: #707070;
+    @media (max-width: 767px){
+        height: 55vw;
     }
 `;
 export const Title = styled.h1`

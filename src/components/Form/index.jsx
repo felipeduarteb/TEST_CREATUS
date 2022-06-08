@@ -25,20 +25,20 @@ function Form() {
   }
   const alertUser = (typeInput) => {
     const input = document.querySelector(`#${typeInput}`);
+    input.classList.remove('error');
     const nameInput = typeInput === 'name' ? 'Nome'
     : typeInput === 'email' ? 'E-mail'
     : 'CPF'
     const mesageAlert = `Digite um ${nameInput} válido`;
     input.focus();
     input.setAttribute('placeholder', mesageAlert);
-    input.classList.toggle('error');
     input.value = '';
+    input.classList.toggle('error');
   }
   const handleSubmitSuccessfull = () => {
     setUserInfos(initialState);
     const inputs = document.querySelectorAll('.error');
     inputs.forEach(input => {
-      console.log(input);
       input.classList.remove('error');
       input.setAttribute('placeholder', `Digite seu ${input.id === 'name' ? 'Nome' : input.id === 'email' ? 'E-mail' : 'CPF (somente números)'}`);
     });
@@ -51,8 +51,6 @@ function Form() {
     :!validEmail.test(userInfos.email) ? alertUser('email') 
     :!validCPF.test(userInfos.cpf) ? alertUser('cpf') 
     :   handleSubmitSuccessfull();
-
-    
   }
   return (
     <Container id='form-contact'>

@@ -5,7 +5,7 @@ import { Container, Apresentation, Title, Text, FormContainer } from './styled';
 
 function Contact() {
   return (
-      <Container>
+      <Container id='contact'>
           <Apresentation>
               <Title>Ajude o algorítimo a ser mais certeiro</Title>
               <Text>

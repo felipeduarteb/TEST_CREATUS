@@ -50,6 +50,10 @@ table {
 	box-sizing: border-box;
 	color: #e5e5e5;
 }
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: 2vw;
+}
 body {
 	font-family: 'Roboto', sans-serif;
 	width: 100%;

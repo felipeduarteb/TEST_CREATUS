@@ -1,11 +1,12 @@
 import React from 'react';
 import Nav from '../Nav';
 
-import { Container, ContainerTitle, Title, TitleSpan, SubTitle } from './styled';
+import { Container, Background, Title, TitleSpan, SubTitle } from './styled';
 
 function Header() {
     return (
         <Container>
+            <Background />
             <Title>
                 Uma seleção de produtos
                 <TitleSpan>Especial para você</TitleSpan>
