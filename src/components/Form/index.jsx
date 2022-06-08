@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Container, Label, InputStyle, GenderContainer, ButtonStyle } from './styled';
+import '../../global/Style/Animations/AlertInvalidInfos.css';
 
 function Form() {
   const initialState = {
@@ -23,33 +24,44 @@ function Form() {
     }
   }
   const alertUser = (typeInput) => {
-    const mesageAlert = `Digite um ${typeInput} válido`;
     const input = document.querySelector(`#${typeInput}`);
+    const nameInput = typeInput === 'name' ? 'Nome'
+    : typeInput === 'email' ? 'E-mail'
+    : 'CPF'
+    const mesageAlert = `Digite um ${nameInput} válido`;
     input.focus();
     input.setAttribute('placeholder', mesageAlert);
-    input.classList.add('error');
+    input.classList.toggle('error');
     input.value = '';
   }
+  const handleSubmitSuccessfull = () => {
+    setUserInfos(initialState);
+    const inputs = document.querySelectorAll('.error');
+    inputs.forEach(input => {
+      console.log(input);
+      input.classList.remove('error');
+      input.setAttribute('placeholder', `Digite seu ${input.id === 'name' ? 'Nome' : input.id === 'email' ? 'E-mail' : 'CPF (somente números)'}`);
+    });
+  }
   const handleSubmit = (e) => {
-    console.log(e.value);
     e.preventDefault();
     const validEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    const validCPF = /^\d{3}\.\d{3}\.\d{3}\-\d{2}$/;
+    const validCPF = /^\d{3}\d{3}\d{3}\d{2}$/;
     userInfos.name === '' ? alertUser('name')
     :!validEmail.test(userInfos.email) ? alertUser('email') 
     :!validCPF.test(userInfos.cpf) ? alertUser('cpf') 
-    :  setUserInfos(initialState);
+    :   handleSubmitSuccessfull();
 
     
   }
   return (
-    <Container>
+    <Container id='form-contact'>
       <Label htmlFor='name'>Seu nome:</Label>
       <InputStyle
         type='text'
         id='name'
         name="name"
-        placeholder='Digite seu nome aqui'
+        placeholder='Digite seu Nome'
         value={userInfos.name}
         onChange={e => handleChangeValues(e)}
       />
@@ -58,7 +70,7 @@ function Form() {
         type='text'
         id='email'
         name="email"
-        placeholder='Digite seu e-mail aqui'
+        placeholder='Digite seu E-mail'
         value={userInfos.email}
         onChange={e => handleChangeValues(e)}
       />
@@ -67,7 +79,7 @@ function Form() {
         type='number'
         id='cpf'
         name="cpf"
-        placeholder='Digite seu CPF aqui'
+        placeholder='Digite seu CPF (somente números)'
         value={userInfos.cpf}
         onChange={e => handleChangeValues(e)}
       />

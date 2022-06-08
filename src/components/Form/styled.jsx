@@ -26,6 +26,7 @@ export const InputStyle = styled.input`
     @media (max-width: 767px){
         height: 6vw;
     }
+    
 `;
 export const GenderContainer = styled.div`
     display: flex;
