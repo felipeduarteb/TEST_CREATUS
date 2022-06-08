@@ -11,7 +11,6 @@ export const Container = styled.header`
     padding-top: 4vw;
     text-align: center;
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 65%);
-
 `;
 export const Title = styled.h1`
     color: #FFFFFF;

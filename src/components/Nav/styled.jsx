@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
-export const Container = styled.ul`
+export const Container = styled.nav`
+    width: min-content;
+`;
+export const List = styled.ul`
     display: flex;
     gap: 1.5vw;
 `;
