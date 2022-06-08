@@ -16,8 +16,8 @@ function Product({poster, name, description, oldPrice, price, parcel}) {
                     <Span>Por: R$ {price}</Span>
                     ou {parcel}x de R$ {price / parcel}
                 </PriceContainer>
-            </DescriptionContainer>
             <ButtonStyle>Comprar</ButtonStyle>
+            </DescriptionContainer>
         </Container>
     );
 }

@@ -40,7 +40,7 @@ export const ButtonStyle = styled.button`
     height: 2.5vw;
     cursor: pointer;
     @media (max-width: 767px){
-        height: 6vw;
+        height: 9vw;
     }
 `;
 
