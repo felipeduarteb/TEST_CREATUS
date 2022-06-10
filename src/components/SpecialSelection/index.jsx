@@ -8,8 +8,8 @@ import { Container, TitleContainer, Title, Line, ProductContainer, ButtonMorePro
 function SpecialSelection() {
     const textButton = 'Veja ainda mais produtos aqui!';
     const [listProducts, setListProducts] = useState([]);
-    const [parcel, setParcel] = useState(2);
-    const [page, setPage] = useState(1);
+    const parcels = 2;
+    const [page, setPage] = useState(2);
     const [nameBtn, setNameBtn] = useState(textButton);
     const handleGetProducts = async () => {
         const response = await GetProducts();
@@ -19,10 +19,10 @@ function SpecialSelection() {
         e.target.setAttribute('disabled', 'disabled');
         setNameBtn('Carregando, aguarde...');
         const response = await GetMoreProducts(page);
-        setPage(page + 1);
         if (response) setListProducts([...listProducts, ...response.products]);
         setNameBtn(textButton);
         e.target.removeAttribute('disabled', 'disabled');
+        setPage(page + 1);
     }
     useEffect(() => {
         handleGetProducts();
@@ -40,13 +40,13 @@ function SpecialSelection() {
                         return (
                             <>
                                 <Product
-                                    key={item.id * page}
+                                    key={item.id}
                                     poster={item.image.replace('//', 'https://')}
                                     name={item.name}
                                     description={item.description}
                                     oldPrice={item.oldPrice}
                                     price={item.price}
-                                    parcel={parcel}
+                                    parcel={parcels}
 
                                 />
                             </>

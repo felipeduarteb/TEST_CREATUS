@@ -2,9 +2,9 @@ import React from 'react';
 
 import { Container, ContainerImage, Image, DescriptionContainer, Title, Description, PriceContainer, Span, ButtonStyle } from './styled';
 
-function Product({poster, name, description, oldPrice, price, parcel}) {
+function Product({id, poster, name, description, oldPrice, price, parcel}) {
     return (
-        <Container>
+        <Container key={id}>
             <ContainerImage>
                 <Image src={poster} />
             </ContainerImage>

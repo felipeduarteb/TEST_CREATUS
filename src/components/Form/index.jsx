@@ -13,15 +13,11 @@ function Form() {
   const [userInfos, setUserInfos] = React.useState(initialState);
   const handleChangeValues = (e) => {
     const { name, value } = e.target;
-    if (name === 'name') {
-      setUserInfos({ ...userInfos, [name]: value });
-    } else if (name === 'email') {
-      setUserInfos({ ...userInfos, [name]: value });
-    } else if (name === 'cpf') {
-      setUserInfos({ ...userInfos, [name]: value });
-    } else if (name === 'gender') {
-      setUserInfos({ ...userInfos, [name]: value });
-    }
+    name === 'name' ? setUserInfos({ ...userInfos, [name]: value })
+    : name === 'email' ? setUserInfos({ ...userInfos, [name]: value })
+    : name === 'cpf' ? setUserInfos({ ...userInfos, [name]: value })
+    : name === 'gender' ? setUserInfos({ ...userInfos, [name]: value })
+    : alert('Algo inesperado aconteceu, por favor, revise seus dados');
   }
   const alertUser = (typeInput) => {
     const input = document.querySelector(`#${typeInput}`);

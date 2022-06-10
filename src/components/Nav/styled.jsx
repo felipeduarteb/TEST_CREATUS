@@ -20,6 +20,7 @@ export const List = styled.ul`
 export const ItemList = styled.li`
     cursor: pointer;
     border-radius: 4px;
+    border: solid 1px #707070;
     width: 13vw;
     height: 2.5vw;
     background: #FFFFFF;
@@ -37,4 +38,5 @@ export const Link = styled.a`
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    
 `;
