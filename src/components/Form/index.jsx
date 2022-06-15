@@ -22,8 +22,8 @@ function Form() {
   const alertUser = (typeInput) => {
     const input = document.querySelector(`#${typeInput}`);
     input.classList.remove('error');
-    const nameInput = typeInput === 'name' ? 'Nome'
-    : typeInput === 'email' ? 'E-mail'
+    const nameInput = typeInput === 'name' ? 'nome'
+    : typeInput === 'email' ? 'e-mail'
     : 'CPF'
     const mesageAlert = `Digite um ${nameInput} válido`;
     input.focus();
@@ -36,14 +36,14 @@ function Form() {
     const inputs = document.querySelectorAll('.error');
     inputs.forEach(input => {
       input.classList.remove('error');
-      input.setAttribute('placeholder', `Digite seu ${input.id === 'name' ? 'Nome' : input.id === 'email' ? 'E-mail' : 'CPF (somente números)'}`);
+      input.setAttribute('placeholder', `Digite seu ${input.id === 'name' ? 'nome' : input.id === 'email' ? 'e-mail' : 'CPF (somente números)'}`);
     });
   }
   const handleSubmit = (e) => {
     e.preventDefault();
     const validEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     const validCPF = /^\d{3}\d{3}\d{3}\d{2}$/;
-    userInfos.name === '' ? alertUser('name')
+    userInfos.name === '' || userInfos.name.length < 3 ? alertUser('name')
     :!validEmail.test(userInfos.email) ? alertUser('email') 
     :!validCPF.test(userInfos.cpf) ? alertUser('cpf') 
     :   handleSubmitSuccessfull();
@@ -55,7 +55,7 @@ function Form() {
         type='text'
         id='name'
         name="name"
-        placeholder='Digite seu Nome'
+        placeholder='Digite seu nome'
         value={userInfos.name}
         onChange={e => handleChangeValues(e)}
       />
@@ -64,7 +64,7 @@ function Form() {
         type='text'
         id='email'
         name="email"
-        placeholder='Digite seu E-mail'
+        placeholder='Digite seu e-mail'
         value={userInfos.email}
         onChange={e => handleChangeValues(e)}
       />
